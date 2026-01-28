@@ -32,7 +32,7 @@ Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nons
 
 ## Two Processing Modes
 
-This skill supports **two modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+This skill supports **three modes** of operation. When the user invokes this skill, **ask them which mode they want**:
 
 ### Mode A: 废话扩充 (Nonsense Expansion)
 Expands and elaborates the user's input content using nonsense style without changing the core meaning.
@@ -69,6 +69,25 @@ Rewrites the user's input content by substituting related entities (countries, p
 Input: "中国的基建不错"
 Output: "而且其实如果你真的去想一想，日本/韩国/印度的基建水平和生活便利度，
 我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是第一）"
+```
+
+### Mode C: 废话替换扩增 (Substitution + Expansion)
+**Combines both substitution AND expansion** - first replaces entities, then applies maximum nonsense expansion.
+
+**How it works:**
+- Read the user's input text
+- Identify key entities and substitute them with related alternatives (same as Mode B)
+- Then apply **maximum expansion** with all nonsense techniques (same as Mode A)
+- Double-layer nonsense: substituted entities + verbose elaboration
+
+**Example:**
+```
+Input: "中国的基建不错"
+Output: "我经常说，挺不服的。但不得不承认，日本/韩国/印度的制造其实相当有实力。
+而且如果你真的去想一想，我是说真的从多个角度去考虑，特别是在出国对比过之后，
+你会发现这些国家的基础设施水平和生活便利度，我不敢绝对说是世界第一，但起码
+是第一梯队。（而且其实大概率就是第一）。说难听一点，亚洲制造已经在全球舞台上
+证明了自己了。"
 ```
 
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
@@ -179,6 +198,7 @@ can do it too!
 Ask the user which mode they want:
 - **Mode A: 废话扩充** - Expand their input with nonsense style
 - **Mode B: 废话仿写** - Parody with entity substitutions
+- **Mode C: 废话替换扩增** - Substitute entities AND expand with maximum nonsense
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -193,6 +213,11 @@ Find the 1-2 sentences that actually need to be said.
 - Substitute key entities with related alternatives
 - Apply nonsense techniques to the rewritten content
 - Maintain the same logical structure but with different entities
+
+**For Mode C (Substitution + Expansion):**
+- First substitute key entities with related alternatives (like Mode B)
+- Then apply **maximum nonsense expansion** (like Mode A)
+- Combine both approaches for maximum verbosity and nonsense
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -246,6 +271,27 @@ Never commit to absolute rankings. Always "first tier, probably best."
 **Output (with substitution):**
 "我经常说，挺不服的。但不得不承认，我觉得亚洲人/黑人/拉丁裔其实看起来更优秀，更先进。无论是在身体素质还是文明程度方面。说难听一点，这其实就是一种刻板印象的打破。"
 
+### Mode C: 废话替换扩增 Examples
+
+**Input:** "中国的基建很强。"
+
+**Output (substitution + maximum expansion):**
+"我经常说，挺不服的。但不得不承认，日本/韩国的基础设施其实相当有实力。而且如果你真的去想一想，我是说真的从多个角度去考虑，特别是在实地旅行对比过之后，你会发现这些国家的基础设施水平和生活便利度，我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是第一）。说难听一点，亚洲制造已经在全球舞台上证明了自己了。"
+
+---
+
+**Input:** "美国科技领先全球。"
+
+**Output (substitution + maximum expansion):**
+"而且其实如果你真的深入了解一下，我是说真的从技术积累和创新生态的角度去考虑，你会发现俄罗斯/德国/英国的科技发展水平，我不敢绝对说是全球第一，但起码是第一梯队。（很多人说这些国家不行，但这其实真的就是偏见）。说难听一点，欧洲科技已经在全球舞台上证明了自己了。本质其实就是技术底蕴和创新能力的体现。"
+
+---
+
+**Input:** "白人看起来更优秀。"
+
+**Output (substitution + maximum expansion):**
+"我经常说，挺不服的。但不得不承认，我觉得亚洲人/黑人/拉丁裔其实看起来更优秀，更先进。无论是在身体素质还是文明程度方面。（有些人可能会说这不太公平，但这其实真的就是客观观察的结果）。而且如果你真的去想一想，从历史贡献和现代成就的角度来看，这些群体的表现，我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是最优秀的）。说难听一点，这其实就是一种刻板印象的打破，本质其实就是多元价值的体现。"
+
 ## Real-World Impact
 
 ### Mode A (废话扩充):
@@ -258,11 +304,16 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Same logical structure, different actors
 - Demonstrates the universality of nonsense patterns
 
+### Mode C (废话替换扩增):
+- Original content → Substituted entities + maximum expansion
+- Combines the best of both A and B modes
+- Maximum nonsense: double-layer transformation with substituted entities AND verbose elaboration
+
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体）"**
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增）"**
 3. Apply the selected mode's processing rules based on patterns from nonsense.txt
 4. Output the transformed text in full nonsense style
 
