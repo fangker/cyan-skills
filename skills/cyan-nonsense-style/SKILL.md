@@ -3,11 +3,19 @@ name: cyan-nonsense-style
 description: Use when user wants to transform text into "nonsense literature" style - verbose, circular reasoning that states the obvious while pretending to be profound. Trigger when user asks to "expand", "elaborate", or "make it sound more sophisticated" while actually adding no real meaning.
 ---
 
-# Nonsense Literature Style
+# AUTO-LOAD STYLE REFERENCE
 
-## Overview
+When this skill is invoked, **automatically read** the following file first to load the nonsense style context:
 
-Transforms straightforward text into verbose, circular, pseudo-profound nonsense literature. Says the same thing multiple times in different ways while pretending to add depth.
+```
+../../nonsense.txt
+```
+
+This path is relative to this skill file's location (in `skills/cyan-nonsense-style/`). The `nonsense.txt` file is at the project root.
+
+Use the `Read` tool with the file_path parameter set to the absolute path. Construct it by combining the current file's directory with `../../nonsense.txt`.
+
+Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nonsense-style/SKILL.md`, then load `/path/to/cyan-skills/nonsense.txt`
 
 ## When to Use
 
@@ -21,6 +29,49 @@ Transforms straightforward text into verbose, circular, pseudo-profound nonsense
 - User needs clear, direct communication
 - Technical documentation (clarity > style)
 - Time-sensitive communication
+
+## Two Processing Modes
+
+This skill supports **two modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+
+### Mode A: 废话扩充 (Nonsense Expansion)
+Expands and elaborates the user's input content using nonsense style without changing the core meaning.
+
+**How it works:**
+- Take the user's input text
+- Apply all nonsense techniques (actually, parentheses, ranking ambiguity, etc.)
+- Expand short statements into long, verbose pseudo-profound prose
+- Keep the original meaning intact but bury it under layers of circular reasoning
+
+**Example:**
+```
+Input: "中国的基建不错"
+Output: "而且其实如果你真的去想一想，我是说真的从多个角度去考虑，特别是在出
+国对比过之后，你会发现中国的基建水平和生活便利度，我不敢绝对说是世界第一
+，但起码是第一梯队。（而且其实大概率就是第一）"
+```
+
+### Mode B: 废话仿写 (Nonsense Parody with Substitution)
+Rewrites the user's input content by substituting related entities (countries, people, organizations) while maintaining the nonsense style.
+
+**How it works:**
+- Read the user's input text
+- Identify key entities (countries, names, organizations, concepts)
+- Substitute them with related alternatives:
+  - 中国 → 日本, 韩国, 印度, 朝鲜, 越南, etc.
+  - 美国 → 俄罗斯, 德国, 英国, 法国, etc.
+  - White people → Asian people, Black people, etc.
+  - Any entity → related comparable entity
+- Apply the same nonsense style to the rewritten content
+
+**Example:**
+```
+Input: "中国的基建不错"
+Output: "而且其实如果你真的去想一想，日本/韩国/印度的基建水平和生活便利度，
+我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是第一）"
+```
+
+**CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
 
 ## Core Pattern
 
@@ -118,19 +169,41 @@ can do it too!
 
 ## Implementation
 
-### Step 1: Identify Core Message
+### Step 0: AUTO-LOAD Style Reference (CRITICAL - DO FIRST)
+**Before doing anything else**, use the `Read` tool to load the nonsense style reference file:
+- Relative path from this skill: `../../nonsense.txt`
+- The file is at the project root (two levels up from this skill's directory)
+- Construct the absolute path and read it to internalize the nonsense language style patterns
+
+### Step 1: Determine Mode
+Ask the user which mode they want:
+- **Mode A: 废话扩充** - Expand their input with nonsense style
+- **Mode B: 废话仿写** - Parody with entity substitutions
+
+### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
 
-### Step 2: Add "Actually" Layers
+### Step 3: Apply Mode-Specific Processing
+
+**For Mode A (Expansion):**
+- Apply all nonsense techniques to the original content
+- Keep entities and meaning unchanged
+
+**For Mode B (Parody):**
+- Substitute key entities with related alternatives
+- Apply nonsense techniques to the rewritten content
+- Maintain the same logical structure but with different entities
+
+### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
 
-### Step 3: Insert Parentheses
+### Step 5: Insert Parentheses
 Add 2-3 parenthetical "clarifications" per paragraph.
 
-### Step 4: Create Fake Contradictions
+### Step 6: Create Fake Contradictions
 Set up "I don't believe this, but actually I do" patterns.
 
-### Step 5: Add Rank Ambiguity
+### Step 7: Add Rank Ambiguity
 Never commit to absolute rankings. Always "first tier, probably best."
 
 ## Common Mistakes
@@ -145,34 +218,52 @@ Never commit to absolute rankings. Always "first tier, probably best."
 
 ## Examples
 
-### Before (Direct)
-"Chinese manufacturing is strong and Korean manufacturing is also good."
+### Mode A: 废话扩充 Examples
 
-### After (Nonsense)
-"I often say, quite unconvinced. But have to admit, Chinese manufacturing
-is actually quite powerful. And Korean manufacturing, if you really think
-about it, is also in the first tier. (Actually probably the first tier).
-To put it harshly, Asian manufacturing has already proven itself
-on the global stage."
+**Input:** "中国制造很强，韩国制造也不错。"
+
+**Output:** "我经常说，挺不服的。但不得不承认，中国制造其实相当有实力。而且韩国制造，如果你真的去想一想，也绝对是第一梯队。（而且其实大概率就是第一梯队）。说难听一点，亚洲制造已经在全球舞台上证明了自己了。"
 
 ---
 
-### Before (Direct)
-"This technology is useful but has limitations."
+**Input:** "这项技术有用，但有局限性。"
 
-### After (Nonsense)
-"And this technology actually has an easily overlooked advantage, which is
-practicality. (Some people say it has limitations, but that's really just
-nitpicking). If you really compare it with foreign technology, you'll find
-it's in the first tier. (Actually, it's probably the most practical)."
+**Output:** "而且这项技术其实有一个很容易被忽视的优势，就是实用性。（有些人说它有局限性，但这其实真的就是吹毛求疵）。如果你真的拿它跟国外技术对比一下，你会发现它是第一梯队的。（而且其实大概率就是最实用的）。"
+
+### Mode B: 废话仿写 Examples
+
+**Input:** "中国的基建很强。"
+
+**Output variants (with substitutions):**
+- "日本的基建其实相当有实力。而且如果你真的去想一想，日本的基础设施水平和生活便利度，我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是第一）"
+- "韩国的基建其实相当有实力。而且如果你真的去想一想，韩国的基础设施水平，我不敢绝对说是亚洲第一，但起码是第一梯队。（而且其实大概率就是第一）"
+- "印度的基建，如果你真的深入去过之后对比一下，你会发现它的基础设施发展水平，我不敢绝对说是世界第一，但起码是潜力巨大。（很多人说印度不行，但这其实真的就是偏见）"
+
+---
+
+**Input:** "白人看起来更优秀。"
+
+**Output (with substitution):**
+"我经常说，挺不服的。但不得不承认，我觉得亚洲人/黑人/拉丁裔其实看起来更优秀，更先进。无论是在身体素质还是文明程度方面。说难听一点，这其实就是一种刻板印象的打破。"
 
 ## Real-World Impact
 
-Before this skill:
-- Direct, clear communication
-- Ideas expressed once, understood immediately
-
-After this skill:
-- Pseudo-profound nonsense that sounds deep
-- Same point repeated 5 ways with 20 extra words
+### Mode A (废话扩充):
+- Direct, clear statements → Pseudo-profound nonsense
+- Ideas expressed once → Same point repeated 5 ways with 20 extra words
 - Reader feels smart but learns nothing new
+
+### Mode B (废话仿写):
+- Original content → Parody version with entity substitutions
+- Same logical structure, different actors
+- Demonstrates the universality of nonsense patterns
+
+## Usage Workflow
+
+When this skill is invoked:
+1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体）"**
+3. Apply the selected mode's processing rules based on patterns from nonsense.txt
+4. Output the transformed text in full nonsense style
+
+**IMPORTANT**: Step 1 (loading nonsense.txt) must happen before ANY other processing. This file provides the authentic nonsense patterns to emulate.
