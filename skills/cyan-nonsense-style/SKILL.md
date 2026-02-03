@@ -30,9 +30,9 @@ Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nons
 - Technical documentation (clarity > style)
 - Time-sensitive communication
 
-## Two Processing Modes
+## Processing Modes
 
-This skill supports **three modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+This skill supports **four modes** of operation. When the user invokes this skill, **ask them which mode they want**:
 
 ### Mode A: 废话扩充 (Nonsense Expansion)
 Expands and elaborates the user's input content using nonsense style without changing the core meaning.
@@ -88,6 +88,47 @@ Output: "我经常说，挺不服的。但不得不承认，日本/韩国/印度
 你会发现这些国家的基础设施水平和生活便利度，我不敢绝对说是世界第一，但起码
 是第一梯队。（而且其实大概率就是第一）。说难听一点，亚洲制造已经在全球舞台上
 证明了自己了。"
+```
+
+### Mode D: 废话生成模式 (Nonsense Generation)
+**Generates original nonsense content from scratch** with self-reflective "thinking" analysis. Creates multi-paragraph nonsense prose on arbitrary topics.
+
+**How it works:**
+- Select a topic (can be suggested by user or chosen randomly: 人际关系, 工作, 生活, 科技, etc.)
+- Generate **multi-paragraph** nonsense content (4-8 paragraphs typical)
+- Each paragraph should include:
+  - Self-reflective "thinking" elements ("而且其实最近一直在想...")
+  - Personal opinion framed as reluctant admission ("我经常说，挺不服的。但不得不承认...")
+  - Fake contradictions and qualifiers
+  - Parenthetical clarifications that repeat or contradict
+  - Ranking ambiguity and "to put it harshly" pivots
+- Mix different nonsense patterns across paragraphs for variety
+- Include "insightful" conclusions that state the obvious as profound
+
+**Key Elements:**
+1. **Opening reflection**: Start with "而且其实最近一直在想..." or similar
+2. **Self-contradiction**: "我以前总觉得...但经历了...之后你会发现..."
+3. **Pattern variety**: Each paragraph uses different nonsense technique combinations
+4. **Multi-layer structure**: Multiple paragraphs building on the same theme
+5. **Fake depth**: Sounds like deep thinking but actually states obvious things
+
+**Example Structure:**
+```
+Paragraph 1: Opening reflection + "其实" layers + personal opinion
+Paragraph 2: "我经常说" + reluctant admission + ranking ambiguity
+Paragraph 3: "很容易被忽视的..." + parenthetical clarification
+Paragraph 4: "说难听点" +本质分析 + self-referential "thinking"
+Paragraph 5-7: More variations with different patterns
+Paragraph 8: Summary with "其实说白了" + final ranking ambiguity
+```
+
+**Example Topic: 人际关系**
+```
+而且其实最近一直在想，人际关系这东西，真的挺复杂的。
+
+我以前总觉得朋友越多越好，认识的人越多越好。（而且其实大概率很多人都是这么想的）。但真的经历了一些事情之后你会发现，朋友这东西，质量比数量重要多了。说难听一点，本质就是大部分人其实都是过客。
+
+[... continues for 4-8 paragraphs ...]
 ```
 
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
@@ -199,6 +240,7 @@ Ask the user which mode they want:
 - **Mode A: 废话扩充** - Expand their input with nonsense style
 - **Mode B: 废话仿写** - Parody with entity substitutions
 - **Mode C: 废话替换扩增** - Substitute entities AND expand with maximum nonsense
+- **Mode D: 废话生成** - Generate original nonsense content from scratch (suggest topic or let AI choose)
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -218,6 +260,19 @@ Find the 1-2 sentences that actually need to be said.
 - First substitute key entities with related alternatives (like Mode B)
 - Then apply **maximum nonsense expansion** (like Mode A)
 - Combine both approaches for maximum verbosity and nonsense
+
+**For Mode D (Generation):**
+- **D1: Select topic** - Use user-suggested topic or choose from: 人际关系, 工作压力, 生活态度, 科技发展, 消费观念, 学习方法, etc.
+- **D2: Plan paragraphs** - Generate 4-8 paragraphs with different nonsense pattern combinations
+- **D3: Opening reflection** - Start with "而且其实最近一直在想..." or "而且其实..." + topic introduction
+- **D4: Self-contradiction** - "我以前总觉得...但经历...之后你会发现..."
+- **D5: Pattern variety** - Each paragraph should emphasize different techniques:
+  - Paragraph 1-2: "其实" + ranking ambiguity + parentheses
+  - Paragraph 3-4: "我经常说" + reluctant admission + "说难听点"
+  - Paragraph 5-6: "很容易被忽视" +本质分析 + self-reference
+  - Paragraph 7-8: "其实说白了" + summary + final ranking
+- **D6: Add filler** - Insert parenthetical "clarifications", fake counterarguments, and obvious insights
+- **D7: Close with ambiguity** - End with "不敢绝对说是...但起码是..." or similar
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -292,6 +347,69 @@ Never commit to absolute rankings. Always "first tier, probably best."
 **Output (substitution + maximum expansion):**
 "我经常说，挺不服的。但不得不承认，我觉得亚洲人/黑人/拉丁裔其实看起来更优秀，更先进。无论是在身体素质还是文明程度方面。（有些人可能会说这不太公平，但这其实真的就是客观观察的结果）。而且如果你真的去想一想，从历史贡献和现代成就的角度来看，这些群体的表现，我不敢绝对说是世界第一，但起码是第一梯队。（而且其实大概率就是最优秀的）。说难听一点，这其实就是一种刻板印象的打破，本质其实就是多元价值的体现。"
 
+### Mode D: 废话生成 Examples
+
+**Topic: 工作压力**
+
+**Output:**
+```
+而且其实最近一直在想，工作这东西，真的挺累人的。
+
+我以前总觉得工作就是为了赚钱，做一天和尚撞一天钟。（而且其实大概率很多人都是这么想的）。但真的经历了一些职场毒打之后你会发现，工作这东西，心态比能力重要多了。说难听一点，本质就是大部分工作其实都是重复劳动。
+
+我经常说，挺不服的。但不得不承认，随着年龄增长，对工作的要求会越来越低。（很多人说要有追求有梦想，但这其实真的就是鸡汤）。刚毕业时你想改变世界，工作几年之后你能准时下班就觉得是胜利。（而且其实大概率这就是所谓的成熟）。
+
+而且其实工作这东西有个很容易被忽视的陷阱，就是所谓的职业发展。（很多人说要不断学习提升自己，但这其实真的就是内卷）。大部分培训都是割韭菜，你学了那些花里胡哨的东西，转头就忘了怎么用。（而且其实大概率用人单位也不在乎你会什么）。
+
+不过话又说回来，完全不工作也不行。人毕竟是社会性动物，你需要找点事情做。（而且其实大概率长期不工作真的会废掉）。但问题是怎么找到那个平衡点，既能赚钱养家，又不至于被工作吞噬。
+
+而且其实如果你真的去想一想，你会发现真正能让你快乐的工作，其实很少。（很多人说找到了热爱的工作，但这其实真的就是幸存者偏差）。现实是，大部分工作做久了都会腻，你不跳槽，他也不涨薪，慢慢就成了困住你的牢笼。
+
+说难听一点，成年人的工作，本质就是用时间换钱的。你没有其他收入来源，就只能出卖时间。（而且其实大概率这就是为什么打工很难翻身，因为你的时间是有限的）。本质其实就是一种无奈的妥协，但又不得不妥协。
+```
+
+---
+
+**Topic: 消费观念**
+
+**Output:**
+```
+而且其实最近一直在想，消费这东西，真的挺玄学的。
+
+我以前总觉得赚钱就是为了花，今朝有酒今朝醉。（而且其实大概率年轻人都这么想）。但真的经历了一些财务危机之后你会发现，消费这东西，克制比放纵重要多了。说难听一点，本质就是大部分消费其实都是冲动消费。
+
+我经常说，挺不服的。但不得不承认，随着年龄增长，买东西会越来越理性。（很多人说要及时行乐，但这其实真的就是消费主义的洗脑）。年轻时你要买最新款的手机，年纪大了你发现能用就行。（而且其实大概率这就是成熟的表现）。
+
+而且其实消费这东西有个很容易被忽视的陷阱，就是所谓的提升生活品质。（很多人说要多花钱享受生活，但这其实真的就是被商家忽悠了）。大部分所谓的生活品质提升，都是花钱买焦虑。（而且其实大概率商家把你当韭菜）。
+
+不过话又说回来，完全不消费也不行。人还是需要适当享受的。（而且其实大概率过度节流真的会降低生活质量）。但问题是怎么找到那个平衡点，既能合理消费，又不至于被消费主义绑架。
+
+而且其实如果你真的去想一想，你会发现真正能让你开心的消费，其实很少。（很多人说买东西能带来快乐，但这其实真的就是短暂的快感）。现实是，大部分东西买回来就吃灰，你以为你会用，其实并不会。
+
+说难听一点，成年人的消费，本质就是用钱买安慰。你工作辛苦了，就想对自己好一点。（而且其实大概率这就是所谓的情绪价值消费）。本质其实就是一种自我补偿，但又很容易变成自我麻痹。
+```
+
+---
+
+**Topic: 学习方法**
+
+**Output:**
+```
+而且其实最近一直在想，学习这东西，真的挺讲究方法的。
+
+我以前总觉得学习就是死记硬背，书读百遍其义自见。（而且其实大概率传统教育都是这么教的）。但真的接触了很多高效学习方法之后你会发现，学习这东西，理解比记忆重要多了。说难听一点，本质就是大部分死记硬背其实都是假努力。
+
+我经常说，挺不服的。但不得不承认，随着年龄增长，学习效率会越来越重要。（很多人说勤能补拙，但这其实真的就是自我安慰）。年轻时你有时间死磕，年纪大了你没那个精力。（而且其实大概率这就是要找捷径）。
+
+而且其实学习这东西有个很容易被忽视的技巧，就是所谓的间隔重复。（很多人说要反复复习，但这其实真的就是废话）。大部分知识你不用就会忘，不管你背多少遍。（而且其实大概率最好的复习就是实际应用）。
+
+不过话又说回来，完全不学习也不行。人还是要不断进步的。（而且其实大概率停止学习真的会被淘汰）。但问题是怎么找到那个平衡点，既能持续学习，又不至于陷入学习焦虑。
+
+而且其实如果你真的去想一想，你会发现真正有用的学习，其实都是实战中学的。（很多人说要多读书多学习，但这其实真的就是理论脱离实际）。现实是，你学了再多的方法论，不实践等于零。
+
+说难听一点，成年人的学习，本质就是带着问题去学。你没有实际需求，学了也记不住。（而且其实大概率这就是为什么很多人学了很多东西却用不出来）。本质其实就是功利性学习，但又不能太功利。
+```
+
 ## Real-World Impact
 
 ### Mode A (废话扩充):
@@ -309,11 +427,17 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Combines the best of both A and B modes
 - Maximum nonsense: double-layer transformation with substituted entities AND verbose elaboration
 
+### Mode D (废话生成):
+- From nothing → Multi-paragraph nonsense prose with "deep thinking"
+- Creates original content that sounds profound but means nothing
+- Self-reflective style with "analysis" that states obvious truths
+- Maximum variety: each paragraph uses different nonsense techniques
+
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增）"**
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机）"**
 3. Apply the selected mode's processing rules based on patterns from nonsense.txt
 4. Output the transformed text in full nonsense style
 
