@@ -272,11 +272,6 @@ The report evaluates these core nonsense patterns:
 
 典型的废话逻辑：把别人都知道的事，用一种"我早看穿了"的语气说出来，让别人觉得自己没你聪明。
 
-## 废话推断 (如完全废话化)
-如果用Mode A完全废话化，这段话可能变成：
-[Provide hypothetical fully-nonsense-ified version]
-```
-
 **Example Analysis:**
 
 **Input:** "哈，明白了！你是说刚刚用那个挑衅行为让大家停止争论，然后拿这个现成的例子来说明'转移矛盾'这个道理。"
@@ -472,7 +467,6 @@ Find the 1-2 sentences that actually need to be said.
     - 炫耀程度
     - 说教程度
   - "Why it's nonsense" explanation
-  - Optional: Nonsense inference (hypothetical full nonsense-ification)
 - **E5: Format output** - Use markdown with clear sections, bullet points, and emoji indicators
 
 ### Step 4: Add "Actually" Layers
