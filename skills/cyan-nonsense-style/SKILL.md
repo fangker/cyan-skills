@@ -32,7 +32,7 @@ Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nons
 
 ## Processing Modes
 
-This skill supports **four modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+This skill supports **five modes** of operation. When the user invokes this skill, **ask them which mode they want**:
 
 ### Mode A: 废话扩充 (Nonsense Expansion)
 Expands and elaborates the user's input content using nonsense style without changing the core meaning.
@@ -129,6 +129,174 @@ Paragraph 8: Summary with "其实说白了" + final ranking ambiguity
 我以前总觉得朋友越多越好，认识的人越多越好。（而且其实大概率很多人都是这么想的）。但真的经历了一些事情之后你会发现，朋友这东西，质量比数量重要多了。说难听一点，本质就是大部分人其实都是过客。
 
 [... continues for 4-8 paragraphs ...]
+```
+
+### Mode E: 废话等级分析 (Nonsense Level Analysis)
+**Analyzes existing text** for its "nonsense quality" and outputs a structured report. Evaluates how effectively the text uses nonsense techniques based on the persona patterns in `nonsense.txt`.
+
+**How it works:**
+- **E1: Load corpus** - Read `nonsense.txt` to understand the baseline nonsense persona patterns
+- **E2: Analyze dimensions** - Evaluate text against key nonsense technique categories
+- **E3: Calculate level** - Determine nonsense level on 5-tier scale
+- **E4: Generate report** - Output structured analysis with technique checklist and inference
+
+**Rating Scale (5 Tiers):**
+
+| Level | Name | Characteristics |
+|-------|------|------------------|
+| ⭐ | 初级 (Entry) | Basic expansion, simple "其实" usage, minimal techniques |
+| ⭐⭐ | 中级 (Intermediate) | Ranking ambiguity + parentheses, 2-3 techniques combined |
+| ⭐⭐⭐ | 高级 (Advanced) | Contradiction setup + essentialist analysis, attitude projection |
+| ⭐⭐⭐⭐ | 大师 (Master) | Full technique integration, "I saw through it" sage posture, circular reasoning |
+| ⭐⭐⭐⭐⭐ | 宗师 (Grandmaster) | Meta-nonsense,现身说法 with lived examples, manipulator superiority, perfect闭环 |
+
+**Analysis Dimensions (Technique Checklist):**
+
+The report evaluates these core nonsense patterns:
+
+1. **开场技巧 (Opening Techniques)**
+   - ✅ "其实/而且其实" multi-layer pivots
+   - ✅ "我经常说，挺不服的" reluctant admission
+   - ✅ "而且其实最近一直在想" reflective opening
+
+2. **括号技巧 (Parentheses)**
+   - ✅ Parenthetical "clarifications" that repeat main point
+   - ✅ Parentheses that contradict the main statement
+   - ✅ "(而且其实大概率就是...)" self-referential parentheses
+
+3. **排名模糊 (Ranking Ambiguity)**
+   - ✅ "不敢绝对说是...但起码是..." structure
+   - ✅ "第一梯队" / "大概率就是" qualifiers
+   - ✅ Refusal to commit to absolute rankings
+
+4. **姿态投射 (Attitude Projection)**
+   - ✅ "看透本质" sage posture (seeing through to the essence)
+   - ✅ "说难听点，本质其实是..." essentialist analysis
+   - ✅ "我早看穿了"事后诸葛亮 hindsight expert
+   - ✅ Manipulator superiority ("我的目的也达到了")
+
+5. **论证结构 (Argument Structure)**
+   - ✅ Theory + example closed-loop validation
+   - ✅ 现身说法 with personal verification
+   - ✅ "显而易见" obvious truths framed as profound insights
+
+6. **言论人格分析 (Personality Analysis)**
+   - **虚伪程度:** Hypocrisy level based on:
+     - Saying one thing but doing another (说一套做一套)
+     - "我经常说，挺不服的。但不得不承认" fake reluctance
+     - Self-contradiction followed by doubling down
+     - Pretending to be objective while being biased
+   - **自负程度:** Arrogance level based on:
+     - "看透本质" / "我早看穿了" superiority posture
+     - Speaking for others with "大家其实都..."
+     - Manipulator stance ("我的目的也达到了")
+     - Condescension ("说难听点，本质其实是...")
+   - **炫耀程度:** Show-off level based on:
+     - Name-dropping (countries, companies, famous people)
+     - Overseas experience signaling ("出国对比过之后")
+     - Wealth/position signaling (我老板, 公司项目, etc.)
+   - **说教程度:** Preachiness level based on:
+     - "本质就是..." definitive statements
+     - Life lessons framed as hard-earned wisdom
+     - "你应该..." implicit advice-giving
+
+**Report Output Format:**
+
+```
+# 废话等级分析报告
+
+## 输入文本
+[Original input text]
+
+## 废话等级
+⭐⭐⭐ 高级
+
+## 核心废话技巧
+- ✅ 有"看透本质"的智者姿态
+- ✅ 有理论+实例的闭环论证
+- ✅ 有现身说法的亲身验证
+- ✅ 有操控者的优越感
+- ❌ 但表达相对简洁，没有过度铺陈
+
+## 详细分析
+
+### 1. 开场技巧
+**检测到:** "看到没，从这也能看出来"
+**分析:** 先知姿态，暗示自己早就知道这个规律，事后诸葛亮式的"我早说了"
+
+### 2. 层层递进
+**检测到:** "一会恨日本一会恨美国"
+**分析:** 用"一会...一会..."的重复强调，营造"你看，又来了"的看透感
+
+### 3. 本质分析
+**检测到:** "因为转移矛盾，会少自己很多内部问题"
+**分析:** 用"转移矛盾"看似专业的术语，实际上是大白话包装成"洞察"
+
+### 4. 现身说法
+**检测到:** "就像我一出手，你俩马上就团结了"
+**分析:** 用刚刚发生的真实事件做证明，"我"作为实验者验证了理论
+
+### 5. 操控者姿态
+**检测到:** "我的目的也达到了"
+**分析:** 暗示自己是个"操盘手"，看透了规律并加以利用
+
+## 言论人格分析
+
+### 虚伪程度: ⭐⭐⭐⭐ 高
+**检测指标:**
+- "我经常说，挺不服的。但不得不承认" - 假装 reluctant，实则炫耀
+- 表面客观分析，实则主观偏见明显
+- 说"不想怎么样"但行为显示相反意图
+
+### 自负程度: ⭐⭐⭐⭐⭐ 极高
+**检测指标:**
+- "看到没，从这也能看出来" - 先知姿态
+- "我的目的也达到了" - 操控者心态
+- 把巧合包装成"我验证了理论"
+
+### 炫耀程度: ⭐⭐ 中等
+**检测指标:**
+- 无明显财富/地位炫耀
+- 无海外经历信号释放
+
+### 说教程度: ⭐⭐⭐ 中高
+**检测指标:**
+- "本质其实就是..." - 用本质主义说教
+- 把简单现象包装成深刻道理
+
+## 为什么这段话很"废话"
+因为它把一个显而易见的现象，包装成了"深刻洞察"：
+- 大家都懂的道理 → "我看出来了"
+- 刚发生的巧合 → "我验证了理论"
+- 简单的行为 → "我的目的达到了"
+
+典型的废话逻辑：把别人都知道的事，用一种"我早看穿了"的语气说出来，让别人觉得自己没你聪明。
+
+## 废话推断 (如完全废话化)
+如果用Mode A完全废话化，这段话可能变成：
+[Provide hypothetical fully-nonsense-ified version]
+```
+
+**Example Analysis:**
+
+**Input:** "哈，明白了！你是说刚刚用那个挑衅行为让大家停止争论，然后拿这个现成的例子来说明'转移矛盾'这个道理。"
+
+**Output:**
+```
+# 废话等级分析报告
+
+## 废话等级
+⭐⭐⭐ 高级
+
+## 核心废话技巧
+- ✅ 有"看透本质"的智者姿态
+- ✅ 有理论+实例的闭环论证
+- ✅ 有现身说法的亲身验证
+- ✅ 有操控者的优越感
+- ❌ 但表达相对简洁，没有过度铺陈
+
+## 为什么这段话很"废话"
+[Full analysis as shown in format above...]
 ```
 
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
@@ -241,6 +409,7 @@ Ask the user which mode they want:
 - **Mode B: 废话仿写** - Parody with entity substitutions
 - **Mode C: 废话替换扩增** - Substitute entities AND expand with maximum nonsense
 - **Mode D: 废话生成** - Generate original nonsense content from scratch (suggest topic or let AI choose)
+- **Mode E: 废话等级分析** - Analyze text for nonsense quality and output structured report
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -273,6 +442,38 @@ Find the 1-2 sentences that actually need to be said.
   - Paragraph 7-8: "其实说白了" + summary + final ranking
 - **D6: Add filler** - Insert parenthetical "clarifications", fake counterarguments, and obvious insights
 - **D7: Close with ambiguity** - End with "不敢绝对说是...但起码是..." or similar
+
+**For Mode E (Analysis):**
+- **E1: Load corpus** - Read `nonsense.txt` to internalize the baseline nonsense persona patterns (same as Step 0)
+- **E2: Detect techniques** - Scan input for:
+  - Opening techniques: "其实/而且其实", "我经常说", "而且其实最近一直在想"
+  - Parentheses: clarifications that repeat or contradict
+  - Ranking ambiguity: "不敢绝对", "第一梯队", "大概率"
+  - Attitude projection: "看透本质", "说难听点", "我早看穿了", "我的目的"
+  - Argument structure: theory+example, 现身说法, "显而易见"
+  - **Personality indicators:**
+    - 虚伪程度: "我经常说挺不服的但不得不承认", self-contradiction, fake reluctance
+    - 自负程度: "看透本质", "我早看穿了", manipulator stance, speaking for others
+    - 炫耀程度: name-dropping, overseas experience, wealth/position signaling
+    - 说教程度: "本质就是...", life lessons, implicit advice-giving
+- **E3: Calculate level** - Based on technique density and combination quality:
+  - ⭐ 初级: 1-2 basic techniques, simple expansion
+  - ⭐⭐ 中级: 3+ techniques with ranking ambiguity + parentheses
+  - ⭐⭐⭐ 高级: Contradiction setup + essentialist analysis + attitude
+  - ⭐⭐⭐⭐ 大师: Full integration, sage posture, closed-loop validation
+  - ⭐⭐⭐⭐⭐ 宗师: Meta-nonsense, 现身说法, manipulator superiority, perfect closure
+- **E4: Generate report** - Output structured analysis with:
+  - Nonsense level (⭐ rating + name)
+  - Technique checklist (✅/❌ format for each dimension)
+  - Detailed analysis of detected techniques with quotes
+  - **Personality analysis section** with ⭐ ratings for:
+    - 虚伪程度
+    - 自负程度
+    - 炫耀程度
+    - 说教程度
+  - "Why it's nonsense" explanation
+  - Optional: Nonsense inference (hypothetical full nonsense-ification)
+- **E5: Format output** - Use markdown with clear sections, bullet points, and emoji indicators
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -433,12 +634,19 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Self-reflective style with "analysis" that states obvious truths
 - Maximum variety: each paragraph uses different nonsense techniques
 
+### Mode E (废话等级分析):
+- Any text → Structured nonsense quality report with ⭐ rating
+- Reveals hidden nonsense techniques with checklist format (✅/❌)
+- Shows how "obvious insights" are framed as profound wisdom
+- Provides meta-analysis: exposes the mechanics of nonsense construction
+- Educational: helps users recognize and understand nonsense patterns
+
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机）"**
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告）"**
 3. Apply the selected mode's processing rules based on patterns from nonsense.txt
-4. Output the transformed text in full nonsense style
+4. Output the transformed text (or analysis report for Mode E) in full nonsense style
 
 **IMPORTANT**: Step 1 (loading nonsense.txt) must happen before ANY other processing. This file provides the authentic nonsense patterns to emulate.
