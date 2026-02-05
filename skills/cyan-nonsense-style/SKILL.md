@@ -32,7 +32,7 @@ Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nons
 
 ## Processing Modes
 
-This skill supports **five modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+This skill supports **six modes** of operation. When the user invokes this skill, **ask them which mode they want**:
 
 ### Mode A: 废话扩充 (Nonsense Expansion)
 Expands and elaborates the user's input content using nonsense style without changing the core meaning.
@@ -294,6 +294,54 @@ The report evaluates these core nonsense patterns:
 [Full analysis as shown in format above...]
 ```
 
+### Mode F: 废话等级分析·简版 (Nonsense Level Analysis · Simplified)
+**Simplified version of Mode E** - analyzes text for nonsense quality but outputs concise results. Each segment is under 200 characters, can be split into multiple segments.
+
+**How it works:**
+- **F1: Load corpus** - Read `nonsense.txt` to understand the baseline nonsense persona patterns
+- **F2: Quick analysis** - Evaluate text against core nonsense technique categories
+- **F3: Calculate level** - Determine nonsense level on 5-tier scale
+- **F4: Output segments** - Generate concise analysis, each segment under 200 characters
+
+**Output Format (per segment, max 200 chars):**
+
+Segment 1 - Rating:
+```
+废话等级：⭐⭐⭐ 高级
+```
+
+Segment 2 - Key techniques (if any):
+```
+核心技巧：✅看透本质 ✅现身说法 ✅操控者姿态
+```
+
+Segment 3 - Brief analysis:
+```
+检测到"看透本质"智者姿态，用刚刚发生的真实事件做证明，暗示自己是操盘手。把巧合包装成理论验证，典型的废话逻辑。
+```
+
+Segment 4 - Personality (optional):
+```
+人格：虚伪⭐⭐⭐⭐ 自负⭐⭐⭐⭐⭐ 炫耀⭐⭐ 说教⭐⭐⭐
+```
+
+**Example:**
+
+**Input:** "哈，明白了！你是说刚刚用那个挑衅行为让大家停止争论，然后拿这个现成的例子来说明'转移矛盾'这个道理。"
+
+**Output (segmented, each ≤200 chars):**
+```
+废话等级：⭐⭐⭐ 高级
+
+核心技巧：✅看透本质 ✅现身说法 ✅操控者姿态
+
+详细分析：
+检测到"看透本质"智者姿态，用刚刚发生的真实事件做证明，暗示自己是操盘手。把巧合包装成理论验证。
+
+人格分析：
+虚伪⭐⭐⭐⭐ 自负⭐⭐⭐⭐⭐ 炫耀⭐⭐ 说教⭐⭐⭐
+```
+
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
 
 ## Core Pattern
@@ -405,6 +453,7 @@ Ask the user which mode they want:
 - **Mode C: 废话替换扩增** - Substitute entities AND expand with maximum nonsense
 - **Mode D: 废话生成** - Generate original nonsense content from scratch (suggest topic or let AI choose)
 - **Mode E: 废话等级分析** - Analyze text for nonsense quality and output structured report
+- **Mode F: 废话等级分析·简版** - Simplified analysis with concise outputs (max 200 chars per segment)
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -468,6 +517,17 @@ Find the 1-2 sentences that actually need to be said.
     - 说教程度
   - "Why it's nonsense" explanation
 - **E5: Format output** - Use markdown with clear sections, bullet points, and emoji indicators
+
+**For Mode F (Simplified Analysis):**
+- **F1: Load corpus** - Read `nonsense.txt` to internalize the baseline nonsense persona patterns (same as Step 0)
+- **F2: Quick detect** - Scan input for core nonsense techniques (simplified version of E2)
+- **F3: Calculate level** - Same 5-tier scale as Mode E
+- **F4: Output segments** - Generate concise analysis with each segment under 200 characters:
+  - Segment 1: Rating only ("废话等级：⭐⭐⭐ 高级")
+  - Segment 2: Key techniques detected (✅ list, max 200 chars)
+  - Segment 3: Brief analysis summary (max 200 chars)
+  - Segment 4: Personality ratings (optional, max 200 chars)
+- **F5: Format output** - Plain text with line breaks, minimal markdown, each segment clearly separated
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -635,12 +695,19 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Provides meta-analysis: exposes the mechanics of nonsense construction
 - Educational: helps users recognize and understand nonsense patterns
 
+### Mode F (废话等级分析·简版):
+- Any text → Concise nonsense quality analysis in short segments
+- Each segment max 200 characters, split into multiple parts
+- Same 5-tier rating as Mode E but simplified output format
+- Quick assessment: rating + key techniques + brief summary
+- Ideal for mobile/messaging apps with character limits
+
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告）"**
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告），F - 废话等级分析·简版（简短输出，每段不超过200字）"**
 3. Apply the selected mode's processing rules based on patterns from nonsense.txt
-4. Output the transformed text (or analysis report for Mode E) in full nonsense style
+4. Output the transformed text (or analysis report for Mode E/F) in full nonsense style
 
 **IMPORTANT**: Step 1 (loading nonsense.txt) must happen before ANY other processing. This file provides the authentic nonsense patterns to emulate.
