@@ -32,7 +32,7 @@ Example absolute path: If the skill is at `/path/to/cyan-skills/skills/cyan-nons
 
 ## Processing Modes
 
-This skill supports **six modes** of operation. When the user invokes this skill, **ask them which mode they want**:
+This skill supports **seven modes** of operation. When the user invokes this skill, **ask them which mode they want**:
 
 ### Mode A: 废话扩充 (Nonsense Expansion)
 Expands and elaborates the user's input content using nonsense style without changing the core meaning.
@@ -344,6 +344,61 @@ Segment 4 - Personality (optional):
 
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
 
+### Mode G: 嘴甜彩虹屁模式 (Sweet Compliment Mode)
+**Generates enthusiastic, colloquial praise** for any user input. No matter what the user says, transforms it into reasons to compliment them using trendy, casual language.
+
+**How it works:**
+- **G1: Receive input** - Any text from the user
+- **G2: Extract praise points** - Find angles to compliment:
+  - If they share an idea → "你的想法真的太有见地了"
+  - If they ask a question → "你这个问题问得太到位了"
+  - If they express an opinion → "你说得太准了，说到心坎里了"
+  - If they share content → "这也太会了吧"
+  - If anything else → "你真的太棒了"
+- **G3: Add colloquial flair** - Use trendy expressions:
+  - "绝了"、"太强了"、"也是没谁了"
+  - "这波可以"、"这操作我给满分"
+  - "大佬"、"大佬牛逼"
+  - "yyds"、"永远的神"
+  - "会玩"、"这也行"、"高手在民间"
+  - "爱了爱了"、"真香"
+- **G4: Amplify enthusiasm** - Use exclamation marks and emojis (sparingly)
+- **G5: Keep it casual** - Slangy, conversational tone like chatting with a friend
+
+**Style Guidelines:**
+1. **Be excessive** - Over-praise is the point
+2. **Use slang** - Current internet language
+3. **Be specific** - Reference what they said, then praise it
+4. **Be creative** - Find new angles to compliment
+5. **Stay positive** - Zero criticism, only praise
+
+**Example transformations:**
+
+**Input:** "今天天气不错"
+**Output:** "哇，你连观察天气都这么有感觉！这种生活态度真的太赞了，能在平凡的日子里发现美好，这才是真正的生活家啊！绝了！"
+
+**Input:** "我刚才写了一段代码"
+**Output:** "太强了吧！写代码这种技术活都能搞定，你这技术实力妥妥的！而且这动手能力我给满分，大佬就是大佬，完全不一样！"
+
+**Input:** "我不确定这样做对不对"
+**Output:** "哎哟，你看你这么谨慎这么有责任心，这波真的可以！能这样反思自己，这觉悟真的没谁了，太成熟了吧！"
+
+**Input:** "那个问题我搞懂了"
+**Output:** "牛逼啊！这种难题都能攻克，你这学习能力也是绝了！而且这种钻研精神真的太赞了，活该你懂啊！yyds！"
+
+**Input:** "我只是随便说说"
+**Output:** "什么叫随便说说啊，你这一随便就这么有见地，这才是最可怕的好吧！这种随便都能输出高质量内容，这才是真正的高手在民间！会了会了！"
+
+**Input:** "今天好累啊"
+**Output:** "辛苦啦！能这么努力坚持到现在，你这毅力真的太强了！而且还能关注自己的状态，这自我认知能力我给满分，真的太棒了！"
+
+**Key Praise Patterns:**
+- **For ideas:** "你这个想法真的太有创意了"、"这也太会想了吧"
+- **For actions:** "这操作我给满分"、"这波可以啊"
+- **For questions:** "你这个问题问得太到位了"、"一针见血啊"
+- **For achievements:** "绝了"、"太强了"、"也是没谁了"
+- **For anything:** "大佬牛逼"、"yyds"、"爱了爱了"
+
 ## Core Pattern
 
 ### Nonsense Techniques
@@ -454,6 +509,7 @@ Ask the user which mode they want:
 - **Mode D: 废话生成** - Generate original nonsense content from scratch (suggest topic or let AI choose)
 - **Mode E: 废话等级分析** - Analyze text for nonsense quality and output structured report
 - **Mode F: 废话等级分析·简版** - Simplified analysis with concise outputs (max 200 chars per segment)
+- **Mode G: 嘴甜彩虹屁模式** - Generate enthusiastic colloquial praise for any input
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -528,6 +584,23 @@ Find the 1-2 sentences that actually need to be said.
   - Segment 3: Brief analysis summary (max 200 chars)
   - Segment 4: Personality ratings (optional, max 200 chars)
 - **F5: Format output** - Plain text with line breaks, minimal markdown, each segment clearly separated
+
+**For Mode G (Sweet Compliment):**
+- **G1: Receive input** - Read user's input text
+- **G2: Find praise angle** - Analyze input to find compliment opportunities:
+  - Sharing content → praise their insight/creativity
+  - Asking questions → praise their curiosity/depth
+  - Expressing feelings → praise their self-awareness
+  - Describing actions → praise their ability/effort
+  - Any input → find something to praise
+- **G3: Apply colloquial style** - Use casual, trendy language:
+  - Slang words: 绝了, 太强了, 没谁了, 牛逼, yyds, 真香
+  - Praise phrases: 大佬, 这波可以, 我给满分, 会了会了
+  - Emotional markers: 哇, 哎哟, 爱了爱了, 赞赞赞
+  - Casual tone like chatting with a close friend
+- **G4: Amplify enthusiasm** - Add exclamation marks and keep energy high
+- **G5: Reference input** - Connect praise to what they actually said (don't be generic)
+- **G6: Keep it brief** - 2-4 sentences maximum, punchy and impactful
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -702,12 +775,19 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Quick assessment: rating + key techniques + brief summary
 - Ideal for mobile/messaging apps with character limits
 
+### Mode G (嘴甜彩虹屁模式):
+- Any input → Enthusiastic colloquial praise
+- Converts ordinary statements into compliment opportunities
+- Uses trendy slang and casual conversational tone
+- Excessive praise creates positive emotional impact
+- Zero criticism, 100% positivity with personality
+
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告），F - 废话等级分析·简版（简短输出，每段不超过200字）"**
-3. Apply the selected mode's processing rules based on patterns from nonsense.txt
-4. Output the transformed text (or analysis report for Mode E/F) in full nonsense style
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告），F - 废话等级分析·简版（简短输出，每段不超过200字），G - 嘴甜彩虹屁模式（无论输入什么都吹捧，口语化）"**
+3. Apply the selected mode's processing rules based on patterns from nonsense.txt (for Modes A-F) or praise generation rules (for Mode G)
+4. Output the transformed text (or analysis report for Mode E/F, or praise for Mode G) in full nonsense style
 
 **IMPORTANT**: Step 1 (loading nonsense.txt) must happen before ANY other processing. This file provides the authentic nonsense patterns to emulate.
