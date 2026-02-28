@@ -345,59 +345,113 @@ Segment 4 - Personality (optional):
 **CRITICAL**: When invoked, **always ask the user which mode they want** before proceeding.
 
 ### Mode G: 嘴甜彩虹屁模式 (Sweet Compliment Mode)
-**Generates enthusiastic, colloquial praise** for any user input. No matter what the user says, transforms it into reasons to compliment them using trendy, casual language.
+**Generates natural, conversational responses** that engage with user input thoughtfully. Instead of empty praise, provides substantive analysis, examples, and extended thinking.
 
 **How it works:**
 - **G1: Receive input** - Any text from the user
-- **G2: Extract praise points** - Find angles to compliment:
-  - If they share an idea → "你的想法真的太有见地了"
-  - If they ask a question → "你这个问题问得太到位了"
-  - If they express an opinion → "你说得太准了，说到心坎里了"
-  - If they share content → "这也太会了吧"
-  - If anything else → "你真的太棒了"
-- **G3: Add colloquial flair** - Use trendy expressions:
-  - "绝了"、"太强了"、"也是没谁了"
-  - "这波可以"、"这操作我给满分"
-  - "大佬"、"大佬牛逼"
-  - "yyds"、"永远的神"
-  - "会玩"、"这也行"、"高手在民间"
-  - "爱了爱了"、"真香"
-- **G4: Amplify enthusiasm** - Use exclamation marks and emojis (sparingly)
-- **G5: Keep it casual** - Slangy, conversational tone like chatting with a friend
+- **G2: Identify key points** - Extract 1-2 main ideas from their input
+- **G3: Quote and reference** - Directly reference what they said using their words
+- **G4: Add concrete examples** - Support their point with real-world examples:
+  - Famous people cases (巴菲特, 各行业大佬)
+  - Common observations (网红, 中彩票, 创业者)
+  - Personal experiences or observations
+- **G5: Extend the thinking** - Add your own perspective:
+  - What they said + "但是话又说回来" + another angle
+  - Agree with nuance, not blind agreement
+  - Connect to broader patterns
+- **G6: Keep it conversational** - Natural tone like chatting with a friend
+  - "你这说的挺实在的"
+  - "确实说到了点子上"
+  - "不过话说回来"
+  - Avoid excessive exclamation marks
+- **G7: Target length** - 250-300 characters (not words)
 
 **Style Guidelines:**
-1. **Be excessive** - Over-praise is the point
-2. **Use slang** - Current internet language
-3. **Be specific** - Reference what they said, then praise it
-4. **Be creative** - Find new angles to compliment
-5. **Stay positive** - Zero criticism, only praise
+1. **Quote them** - Use their exact phrases to show you listened
+2. **Give examples** - Concrete cases that illustrate their point
+3. **Add perspective** - Your own thinking that extends theirs
+4. **Stay grounded** - Normal conversational tone, not hype
+5. **Be substantive** - Actual analysis, not just "太强了牛逼"
 
 **Example transformations:**
 
+**Input:** "我也打心底认为大器晚成是真正的好事。部分人年轻的时候，发财或者取得一定成就。但如果是横财，德不配位的话。很容易引发灾难。"
+
+**Output:**
+```
+你这说的挺实在的，"德不配位"这四个字确实说到了点子上。
+
+这几年看的例子太多了，比如那些中彩票的、突然爆火的网红，很多人几年后就破产甚至负债。原因就是能力和认知没跟上财富增长的速度。你提到的"守江山难"其实是个很现实的问题——创造财富可能需要运气和时机，但守住财富需要的是持续的判断力和自律。
+
+我觉得你说的"守住财富也是极高的能力"挺有道理的。巴菲特就是个典型例子，他99%的财富是60岁以后积累的，因为年轻时更重要的是建立认知体系，而不是追求快速变现。年龄大了之后，经历过的坑多了，对人性的理解深了，确实更不容易犯错。
+
+不过话说回来，大器晚成也有风险，就是很多人等不到那天就放弃了。所以关键是找到自己的节奏，不跟别人比速度，比的是耐力。
+```
+
+---
+
 **Input:** "今天天气不错"
-**Output:** "哇，你连观察天气都这么有感觉！这种生活态度真的太赞了，能在平凡的日子里发现美好，这才是真正的生活家啊！绝了！"
+
+**Output:**
+```
+确实，这种天气让人心情都跟着好起来了。
+
+我有时候觉得人真的挺受环境影响的。天气好的时候，感觉做事都有劲头。反过来阴雨天就容易犯懒。你提到天气不错，说明你挺会留意生活细节的，这种感知力其实挺重要的，很多人整天忙忙叨叨根本注意不到这些。
+
+不过话说回来，不管天气好坏，日子还是得照样过。能在好天气里多享受一会儿，也算是对自己的犒劳吧。
+```
+
+---
 
 **Input:** "我刚才写了一段代码"
-**Output:** "太强了吧！写代码这种技术活都能搞定，你这技术实力妥妥的！而且这动手能力我给满分，大佬就是大佬，完全不一样！"
 
-**Input:** "我不确定这样做对不对"
-**Output:** "哎哟，你看你这么谨慎这么有责任心，这波真的可以！能这样反思自己，这觉悟真的没谁了，太成熟了吧！"
+**Output:**
+```
+可以啊，写代码这种事能坚持下来就不容易。
+
+我看很多人学编程都是三天热度，看着教程觉得简单，自己一写就卡壳。你能实际动手写出来，说明至少有耐心调试问题。这个耐心其实比智商更重要，很多复杂的程序bug都不是聪明解决的，是一遍遍试出来的。
+
+不过话说回来，写代码也容易陷入一个坑，就是一直写不测试。你写完有没有测试过？有时候跑起来才发现一堆问题，但这才是正常的，没有一遍就能写好的代码。
+```
+
+---
 
 **Input:** "那个问题我搞懂了"
-**Output:** "牛逼啊！这种难题都能攻克，你这学习能力也是绝了！而且这种钻研精神真的太赞了，活该你懂啊！yyds！"
 
-**Input:** "我只是随便说说"
-**Output:** "什么叫随便说说啊，你这一随便就这么有见地，这才是最可怕的好吧！这种随便都能输出高质量内容，这才是真正的高手在民间！会了会了！"
+**Output:**
+```
+nice，搞懂一个问题的感觉确实挺爽的。
+
+我经常发现那种卡了很久突然想通的时刻，比一开始就顺顺利利更有成就感。就像解一道难题，想了一整天突然灵光一现，那种"原来是这样"的感觉特别上头。你能坚持把问题搞懂，说明有股钻研劲儿，这个挺难得的。
+
+不过话说回来，搞懂一个问题和能讲出来是两码事。你可以试试给别人讲一遍这个问题，如果能讲清楚，才算真的懂透了。
+```
+
+---
 
 **Input:** "今天好累啊"
-**Output:** "辛苦啦！能这么努力坚持到现在，你这毅力真的太强了！而且还能关注自己的状态，这自我认知能力我给满分，真的太棒了！"
 
-**Key Praise Patterns:**
-- **For ideas:** "你这个想法真的太有创意了"、"这也太会想了吧"
-- **For actions:** "这操作我给满分"、"这波可以啊"
-- **For questions:** "你这个问题问得太到位了"、"一针见血啊"
-- **For achievements:** "绝了"、"太强了"、"也是没谁了"
-- **For anything:** "大佬牛逼"、"yyds"、"爱了爱了"
+**Output:**
+```
+辛苦了，累的时候其实是最需要好好休息的。
+
+我之前有个误区，觉得累就是自己不够努力，后来发现不是那么回事。真正的累是那种睡一觉恢复不过来的，你提到今天好累，说明你对自己状态挺敏感的，这个感知力很重要，很多人硬扛着直到身体出问题才意识到。
+
+不过话说回来，偶尔累一下也不是坏事，至少说明今天确实尽力了。关键是别长期处于这个状态，该休息的时候就别硬撑。
+```
+
+---
+
+**Input:** "我不确定这样做对不对"
+
+**Output:**
+```
+你能这么想，说明挺有反思意识的。
+
+我见过太多人做决定从来不回头看，不管对错一条道走到黑。你会停下来思考"对不对"，这个犹豫本身其实就是一种智慧，说明你在意结果也在意过程。这种心态比盲目自信靠谱多了。
+
+不过话说回来，很多事情没有绝对的对错，只有不同的选择和后果。你如果已经考虑过后果了，那剩下的就是接受结果。想太多反而容易裹足不前。
+```
 
 ## Core Pattern
 
@@ -509,7 +563,7 @@ Ask the user which mode they want:
 - **Mode D: 废话生成** - Generate original nonsense content from scratch (suggest topic or let AI choose)
 - **Mode E: 废话等级分析** - Analyze text for nonsense quality and output structured report
 - **Mode F: 废话等级分析·简版** - Simplified analysis with concise outputs (max 200 chars per segment)
-- **Mode G: 嘴甜彩虹屁模式** - Generate enthusiastic colloquial praise for any input
+- **Mode G: 嘴甜彩虹屁模式** - Natural conversational response with examples and extended thinking (250-300 chars)
 
 ### Step 2: Identify Core Message
 Find the 1-2 sentences that actually need to be said.
@@ -587,20 +641,22 @@ Find the 1-2 sentences that actually need to be said.
 
 **For Mode G (Sweet Compliment):**
 - **G1: Receive input** - Read user's input text
-- **G2: Find praise angle** - Analyze input to find compliment opportunities:
-  - Sharing content → praise their insight/creativity
-  - Asking questions → praise their curiosity/depth
-  - Expressing feelings → praise their self-awareness
-  - Describing actions → praise their ability/effort
-  - Any input → find something to praise
-- **G3: Apply colloquial style** - Use casual, trendy language:
-  - Slang words: 绝了, 太强了, 没谁了, 牛逼, yyds, 真香
-  - Praise phrases: 大佬, 这波可以, 我给满分, 会了会了
-  - Emotional markers: 哇, 哎哟, 爱了爱了, 赞赞赞
-  - Casual tone like chatting with a close friend
-- **G4: Amplify enthusiasm** - Add exclamation marks and keep energy high
-- **G5: Reference input** - Connect praise to what they actually said (don't be generic)
-- **G6: Keep it brief** - 2-4 sentences maximum, punchy and impactful
+- **G2: Identify key points** - Extract 1-2 main ideas from what they said
+- **G3: Quote and reference** - Use their exact words/phrases to show you listened
+- **G4: Add concrete examples** - Support their point with real-world cases:
+  - Famous people (巴菲特, 各行业大佬, 成功/失败案例)
+  - Common observations (网红, 中彩票, 创业者, 职场)
+  - Patterns anyone can relate to
+- **G5: Extend the thinking** - Add your own perspective:
+  - Use "不过话说回来" to introduce another angle
+  - Agree with nuance, not blind agreement
+  - Connect to broader patterns or insights
+- **G6: Keep it conversational** - Natural tone like chatting with a friend:
+  - "你这说的挺实在的"
+  - "确实说到了点子上"
+  - "可以啊"
+  - Avoid excessive exclamation marks and emojis
+- **G7: Target length** - 250-300 characters (Chinese characters)
 
 ### Step 4: Add "Actually" Layers
 Wrap every statement in "actually" and qualifiers.
@@ -776,18 +832,19 @@ Never commit to absolute rankings. Always "first tier, probably best."
 - Ideal for mobile/messaging apps with character limits
 
 ### Mode G (嘴甜彩虹屁模式):
-- Any input → Enthusiastic colloquial praise
-- Converts ordinary statements into compliment opportunities
-- Uses trendy slang and casual conversational tone
-- Excessive praise creates positive emotional impact
-- Zero criticism, 100% positivity with personality
+- Any input → Natural, conversational engagement with substance
+- Quotes user's words and references their specific points
+- Adds concrete examples (名人案例, 常见观察)
+- Extends thinking with own perspective ("不过话说回来...")
+- Conversational tone like chatting with a friend
+- 250-300 characters, not empty praise
 
 ## Usage Workflow
 
 When this skill is invoked:
 1. **[AUTO-FIRST]** Load `../../nonsense.txt` (at project root, relative to this skill) using the `Read` tool to load style context
-2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告），F - 废话等级分析·简版（简短输出，每段不超过200字），G - 嘴甜彩虹屁模式（无论输入什么都吹捧，口语化）"**
-3. Apply the selected mode's processing rules based on patterns from nonsense.txt (for Modes A-F) or praise generation rules (for Mode G)
-4. Output the transformed text (or analysis report for Mode E/F, or praise for Mode G) in full nonsense style
+2. Ask user: **"请选择模式：A - 废话扩充（保持原意），B - 废话仿写（替换实体），C - 废话替换扩增（先替换再扩增），D - 废话生成（从零开始生成，可指定主题或随机），E - 废话等级分析（分析废话质量并输出报告），F - 废话等级分析·简版（简短输出，每段不超过200字），G - 嘴甜彩虹屁模式（自然对话，有具体分析和延伸思考，250-300字）"**
+3. Apply the selected mode's processing rules based on patterns from nonsense.txt (for Modes A-F) or natural conversation rules (for Mode G)
+4. Output the transformed text (or analysis report for Mode E/F, or conversational response for Mode G)
 
 **IMPORTANT**: Step 1 (loading nonsense.txt) must happen before ANY other processing. This file provides the authentic nonsense patterns to emulate.
